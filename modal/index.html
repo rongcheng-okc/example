@@ -63,7 +63,6 @@
         #btn_close {
             top: 50px;
             left: 50%;
-            color: white;
         }
         
     </style>
@@ -88,15 +87,29 @@
 
     <script>
         // 获取模态窗口
+        var html = document.documentElement;
+        var body = document.body;
         var modal = document.getElementsByClassName('modal')[0];
         var btnOpen = document.getElementById('btn_open');
         var btnClose = document.getElementById('btn_close');
+
         btnOpen.addEventListener('click', function() {
+            fixPage();
             modal.style.display = 'block';
         }, false);
         btnClose.addEventListener('click', function() {
+            freePage();
             modal.style.display = 'none';
         }, false);
+
+        function fixPage() {
+            html.style.overflow = 'hidden';
+            body.style.overflow = 'hidden';
+        }
+        function freePage() {
+            html.style.overflow = 'visible';
+            body.style.overflow = 'visible';
+        }
     </script>
 </body>
 </html>
