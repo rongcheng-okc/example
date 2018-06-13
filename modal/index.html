@@ -1,65 +1,102 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modal</title>
-<style>
-/* The Modal (background) */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 10; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.5);
-}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        /* The Modal (background) */
 
-/* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-}
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-/* Add Animation */
-.modal-content {   
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
+        /* Modal Content (image) */
 
-@-webkit-keyframes zoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
-}
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 80%;
+        }
 
-@keyframes zoom {
-    from {transform: scale(0.1)}
-    to {transform: scale(1)}
-}
-</style>
+        /* Add Animation */
+
+        .modal-content {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.1)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+
+        .main {
+            padding: 100px 0;
+        }
+
+        #btn_close {
+            top: 50px;
+            left: 50%;
+            color: white;
+        }
+        
+    </style>
 </head>
+
 <body>
-<div style="height: 500px; background-color: red;"></div>
-<div style="height: 500px; background-color: green;"></div>
-<div style="height: 500px; background-color: blue;"></div>
-<!-- The Modal -->
-<div class="modal">
-  <div class="modal-content">
-      <div style="height: 500px; background-color: blueviolet;"></div>
-      <div style="height: 500px; background-color: greenyellow;"></div>
-  </div>
-</div>
+    <div class="main">
+        <button id="btn_open">open</button>
+        <div style="height: 500px; background-color: red;"></div>
+        <div style="height: 500px; background-color: green;"></div>
+        <div style="height: 500px; background-color: blue;"></div>
+    </div>
 
-<script>
-// 获取模态窗口
-var modal = document.getElementsByClassName('modal')[0];
-</script>
+    <!-- The Modal -->
+    <div class="modal">
+        <div class="modal-content">
+            <button id="btn_close">close</button>
+            <div style="height: 500px; background-color: blueviolet;"></div>
+            <div style="height: 500px; background-color: greenyellow;"></div>
+        </div>
+    </div>
 
+    <script>
+        // 获取模态窗口
+        var modal = document.getElementsByClassName('modal')[0];
+        var btnOpen = document.getElementById('btn_open');
+        var btnClose = document.getElementById('btn_close');
+        btnOpen.addEventListener('click', function() {
+            modal.style.display = 'block';
+        }, false);
+        btnClose.addEventListener('click', function() {
+            modal.style.display = 'none';
+        }, false);
+    </script>
 </body>
 </html>
