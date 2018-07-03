@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .react-container {
+        position: relative;
+        top: 100px;
+        left: 100px;
+        transform-style: preserve-3d;
+        -webkit-perspective: 800;
+        transform: rotateX(-12deg) rotateY(-6deg);
+    }
+    .side-1, .side-2, .side-3, .side-4, .side-5, .side-6 {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+    }
+    .son {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        font-size: 30px;
+        color: white;
+    }
+    .side-1 {
+        transform: rotateX(90deg);
+        transform-origin: top;
+        background-color: lightred;
+    }
+    .side-2 {
+        transform: rotateY(90deg);
+        transform-origin: right;
+        background-color: lightgreen;
+    }
+    .side-3 {
+        transform: rotateX(-90deg);
+        transform-origin: bottom;
+        background-color: aqua;
+    }
+    .side-4 {
+        transform: rotateY(-90deg);
+        transform-origin: left;
+        background-color: coral;
+    }
+    .side-5 {
+        background-color: cornflowerblue;
+        transform: translateZ(150px);
+        opacity: 0.6;
+    }
+    .side-6 {
+        background-color: bisque;
+    }
+    </style>
+</head>
+<body>
+    <section class="react-container">
+        <div class="side-1"><div class="son">1</div></div>
+        <div class="side-2"><div class="son">2</div></div>
+        <div class="side-3"><div class="son">3</div></div>
+        <div class="side-4"><div class="son">4</div></div>
+        <div class="side-5"><div class="son">5</div></div>
+        <div class="side-6"><div class="son">6</div></div>
+    </section>
+    <script>
+        var container = document.getElementsByClassName('react-container')[0];
+        var startX, startY, endX, endY;
+        var originXDeg = -12, originYDeg = -6; 
+        window.addEventListener('touchstart', function(e) {
+            var touch = e.touches[0]; 
+            startX = Number(touch.pageX); 
+            startY = Number(touch.pageY); 
+        }, false);
+        window.addEventListener('touchend', function(e) {
+            var touch = e.changedTouches[0]; 
+            endX = Number(touch.pageX); 
+            endY = Number(touch.pageY); 
+            console.log('x:', endX-startX);
+            console.log('y:', endY-startY);
+            changeContainerDeg((endX-startX) / 10, (endY-startY) / 10); 
+        }, false);
+
+        function changeContainerDeg(x, y) {
+            originXDeg += -y;
+            originYDeg += -x;
+            var rotateX = 'rotateX(' + originXDeg + 'deg)';
+            var rotateY = 'rotateZ(' + originYDeg + 'deg)';
+            var transform = rotateX + rotateY;
+            container.style.transform = transform;
+        }
+    </script>
+</body>
+</html>
