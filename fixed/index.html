@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fixed</title>
+    <style>
+    body {
+        margin: 0;
+    }
+    .top {
+        height: 500px;
+        background-color: aquamarine;
+    }
+    .target {
+        height: 50px;
+        background-color: coral;
+    }
+    .bottom {
+        height: 800px;
+        background-color: cornflowerblue;
+    }
+    .fix {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <section class="top"></section>
+    <section class="target"></section>
+    <section class="bottom"></section>
+    <script>
+    var bottom = document.getElementsByClassName('bottom')[0];
+    var target = document.getElementsByClassName('target')[0];
+
+    document.addEventListener('scroll', function() {
+        var topOffset = bottom.getBoundingClientRect().top;
+        if(topOffset < 50) {
+            target.classList.add('fix');
+        } else {
+            target.classList.remove('fix');
+        }
+    }, false);
+    // 根据参考元素距离顶部的位置，来决定是否定位;这里不能用目标元素来做判断距离顶部的位置，因为一旦定住之后，top就一直是 0；
+    </script>
+</body>
+</html>
