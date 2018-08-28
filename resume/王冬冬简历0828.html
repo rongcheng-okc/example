@@ -9,6 +9,7 @@
     body { padding: 0 5%; margin: 0; font-size: 14px; }
 
     section { width: 100%; padding: 0; margin: 1rem 0; }
+
     .title-content { text-align: center; margin: 2rem 0; }
 
     .section-title { width: 40%; color: white; background-color: #1d953f; }
@@ -32,13 +33,15 @@
 
     .ul-skill { padding-left: 2rem; }
 
-	.li-work-time { margin: 0.7rem 0 0.5rem 0; font-weight: 600; }
+	.li-work-title { margin: 0.7rem 0 0.5rem 0; font-weight: 600; }
 
-	.li-work-content { line-height: 1.5rem; list-style:none; margin-bottom: 0.5rem;}
+	.li-work-content { display: flex; flex-wrap: wrap; margin-bottom: 0.5rem;}
+
+    .li-label { flex: 0 0 70px; } 
+
+    .li-desc { flex: 1 0 0; }
 
 	.ul-skill > li { line-height: 1.5rem; }
-
-    .li-label { color: white; background-color: #1d953f; border-radius: 10px; display: inline-block; padding: 0 8px; margin-right: 5px;}
     </style>
 </head>
 
@@ -99,87 +102,78 @@
     	</summary>
     	<ul class="ul-work">
             <li class="company-title">微医</li>
-    		<li class="li-work-time">医院数据接入</li>
+    		<li class="li-work-title">医院数据接入</li>
             <li class="li-work-content">
-                <span class="li-label">项目描述</span>
-                医院方人员调用我们的接口把医院的排班数据推送到挂号网平台，联调排班，如果有异常需要跟 java 后台代码，对数据库做些操作。为了提高效率开发后台管理系统。
+                <div class="li-label">项目描述：</div>
+                <div class="li-desc">医院方人员调用我们的接口把医院的排班数据推送到挂号网平台，联调排班，如果有异常需要跟 java 后台代码，对数据库做些操作。为了提高效率开发后台管理系统。</div>
             </li>
     		<li class="li-work-content">
-    			<span class="li-label">技术概述</span>
-                实习期前几个月做 java 开发，因此对 java 比较熟悉，能在 Controller 类里熟练使用 java。
+    			<div class="li-label">技术概述：</div>
+                <div class="li-desc">实习期前几个月做 java 开发，因此对 java 比较熟悉，能在 Controller 类里熟练使用 java。</div>
     		</li>
 
-    		<li class="li-work-time">后台管理系统开发</li>
+    		<li class="li-work-title">后台管理系统开发</li>
             <li class="li-work-content">     
-                <span class="li-label">项目描述</span>
-                公司人员调整后，开始正式做前端工作。此时的项目是，我们组的程序与部署在医院前置机上的程序进行交互，远程管理，在权限允许的情况下查看数据，抽取我们需要的数据。此时我负责整个前端的界面的搭建。
+                <div class="li-label">项目描述：</div>
+                <div class="li-desc">公司人员调整后，开始正式做前端工作。此时的项目是，我们组的程序与部署在医院前置机上的程序进行交互，远程管理，在权限允许的情况下查看数据，抽取我们需要的数据。此时我负责整个前端的界面的搭建。</div>
             </li>
     		<li class="li-work-content">
-    			<span class="li-label">技术概述</span>
-                使用 Bootstrap + JQuery + Metronic + Velocity 开发后台管理系统，与 Java 代码部署在一起。 
+    			<div class="li-label">技术概述：</div>
+                <div class="li-desc">使用 Bootstrap + JQuery + Metronic + Velocity 开发后台管理系统，与 Java 代码部署在一起。 </div>
             </li>    
 
-    		<li class="li-work-time">APP内嵌H5：电子病历展示和实时心电波形绘制</li>
+    		<li class="li-work-title">APP内嵌H5：电子病历展示和实时心电波形绘制</li>
             <li class="li-work-content">
-                <span class="li-label">项目描述</span>
-                医生端的App里展示电子病历和实时心电。心电使用canvas画布绘制，数据是 java 中转服务从医院的心电中央台实时获取，页面上用 websocket 协议从 java 中转服务处拿到心电数据，绘制波形到页面。
+                <div class="li-label">项目描述：</div>
+                <div class="li-desc">医生端的App里展示电子病历和实时心电。心电使用canvas画布绘制，数据是 java 中转服务从医院的心电中央台实时获取，页面上用 websocket 协议从 java 中转服务处拿到心电数据，绘制波形到页面。</div>
             </li>
     		<li class="li-work-content">
-    			<span class="li-label">技术概述</span>
-                手机端页面的内容中重要的是心电数据的波形绘制，这里用到了canvas元素的一些特性，以及使用 websocket 双向传输数据。手机端页面的布局遇到的一些兼容问题。
+    			<div class="li-label">技术概述：</div>
+                <div class="li-desc">手机端页面的内容中重要的是心电数据的波形绘制，这里用到了canvas元素的一些特性，以及使用 websocket 双向传输数据。手机端页面的布局遇到的一些兼容问题。</div>
     		</li>
 
-    		<li class="li-work-time">医疗影像显示插件的维护</li>
+    		<li class="li-work-title">医疗影像显示插件的维护</li>
     		<li class="li-work-content">
-    			<span class="li-label">项目描述</span>
-                接手了别人写好的项目，架构上算是用 Javascript 以面向对象的模式实现的前端项目，从 java 服务拿到 DICOM 数据后，解析并显示 DICOM 图。我做修复和优化工作，首先是理清该项目的整体设计脉络，然后清除 bug，后面有在原来基础上增加了几个小功能。
+    			<div class="li-label">项目描述：</div>
+                <div class="li-desc">接手已有的项目，架构上是 Javascript 面向对象的模式实现的项目，从 java 服务拿到 DICOM 数据后，解析并显示 DICOM 图。我做修复和优化工作，首先是理清该项目的整体设计脉络，然后清除 bug，后面有在原来基础上增加了几个小功能。</div>
     		</li>
-    		<li class="li-work-time">尝试前后端分离：桌面软件改版为 web 版</li>
+    		<li class="li-work-title">尝试前后端分离：桌面软件改版为 web 版</li>
     		<li class="li-work-content">
-    			<span class="li-label">项目描述</span>
-                把一款传统的桌面程序改版为web版，给我们的合作单位使用，由于前后端开发人员异地，且无法同步开发，考虑到这些情况，加上前后端分离技术已经成熟，公司其他部门已经推行使用一段时间了，我也做了许多准备，就开始用 vue 的技术栈开始开发新项目。
-    		</li>
-    		<li class="li-work-time">
-    			离职原因：薪资太低
+    			<div class="li-label">项目描述：</div>
+                <div class="li-desc">把一款传统的桌面程序改版为web版，给我们的合作单位使用。由于前后端开发人员异地，且无法同步开发，加上前后端分离技术已经成熟，公司其他部门已经推行使用一段时间了，我也做了许多准备，就开始用 vue 的技术栈开始开发新项目。</div>
     		</li>
     	</ul>
         <ul class="ul-work">
             <li class="company-title">有赞</li>
-            <li class="li-work-time">商家端收银台开发</li>
+            <li class="li-work-title">商家端收银台开发</li>
             <li class="li-work-content">
-                <span class="li-label">项目描述</span>
-                新支付体系的商家端收银台开发，在原有的支付流程中分流，白名单中的店铺走新收银流程，原有的流程保留。
+                <div class="li-label">项目描述：</div>
+                <div class="li-desc">新支付体系的商家端收银台开发，在原有的支付流程中分流，白名单中的店铺走新收银流程，原有的流程保留。</div>
             </li>
             <li class="li-work-content">
-                <span class="li-label">技术概述</span>
-                开发环境复杂，涉及到系统有，公用组件库系统、PHP 后台系统、Backbone 前端系统、Node 中间层系统，大量的时间要花在开发环境的疏通上。 
-            </li>
-            <li class="li-work-time">
-                离职原因：在复杂的开发环境下，作为新人的我没法高效完成工作，压力很大。
+                <div class="li-label">技术概述：</div>
+                <div class="li-desc">开发环境复杂，涉及到系统有，公用组件库系统、PHP 后台系统、Backbone 前端系统、Node 中间层系统，大量的时间要花在开发环境的疏通上。 </div>
             </li>
         </ul>
         <ul class="ul-work">
             <li class="company-title">贝因美-妈妈购</li>
-            <li class="li-work-time">H5活动页开发</li>
+            <li class="li-work-title">H5活动页开发</li>
             <li class="li-work-content">
-                <span class="li-label">项目描述</span>
-                开发了世界杯和美礼卡促销两个活动的页面。
+                <div class="li-label">项目描述：</div>
+                <div class="li-desc">开发了世界杯和美礼卡促销两个活动的页面。</div>
             </li>
             <li class="li-work-content">
-                <span class="li-label">技术概述</span>
-                前端文件放在服务器上，手机端直接请求文件，普通的前端开发，需要注意的就是移动端的一些兼容性。
+                <div class="li-label">技术概述：</div>
+                <div class="li-desc">用 vue 包 实现数据的双向绑定， 开发较为快捷。前端文件放在服务器上， 手机端直接请求文件，最基本的前端开发模式。需要注意的是： 移动端的一些兼容性；为了快速加载就不使用 UI 库，一些交互效果都是自己实现；各种布局效果。</div>
             </li>
-            <li class="li-work-time">妈妈购APP的优惠券改版</li>
+            <li class="li-work-title">妈妈购APP的优惠券改版</li>
             <li class="li-work-content">
-                <span class="li-label">项目描述</span>
-                由于业务的深入，原有的优惠券无法满足，改动代价大于重新开发，所以直接开发。
+                <div class="li-label">项目描述：</div>
+                <div class="li-desc">由于业务的深入，原有的优惠券无法满足，改动代价大于重新开发，所以直接开发。</div>
             </li>
             <li class="li-work-content">
-                <span class="li-label">技术概述</span>
-                提公共的优惠券组件，注重代码的简洁和易读性。
-            </li>
-            <li class="li-work-time">
-                离职原因：组织建构调整，人员精简，而我未转正。
+                <div class="li-label">技术概述：</div>
+                <div class="li-desc">提公共的优惠券组件，注重代码的简洁和易读性。</div>
             </li>
         </ul>    
     </section>
@@ -188,18 +182,18 @@
     		<h2 class="section-title-content">技能概述</h2>
     	</summary>
     	<ol class="ul-skill">
-    		<li>英语四级</li>
+    		<li>英语四级，阅读无障碍</li>
     		<li>能熟练应用原生Javascript，HTML5，CSS，SCSS</li>
     		<li>掌握常用的 ES6 常用特性</li>
-    		<li>熟悉 SpringMVC 的一套开发模式</li>
             <li>用 Vue 全家桶开发项目</li>
+    		<li>熟悉 SpringMVC 的一套开发模式</li>
     		<li>对 Node 有一定程度的掌握，且较为感兴趣，可以使用 express 或 koa 框架搭建静态文件或有路由的 web 服务</li>
             <li>React 仅限于了解，没有项目经验</li>
     	</ol>
     </section>
     <section id="footer">
     	<summary class="section-title">
-    		<h2 class="section-title-content">自评</h2>
+    		<h2 class="section-title-content">自我介绍</h2>
     	</summary>
     	<p>工作：认真工作，勤奋学习，天天向上，这是每一天的准则； </p>
     	<p>生活：热爱打篮球，喜欢看电影，偶尔看点轻松愉快的书</p>
