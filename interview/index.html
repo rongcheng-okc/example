@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>interview-2019</title>
+</head>
+<body>
+    <section>
+        <button id="btn">测试防止重复提交</button>
+    </section>
+    <script>
+        let elBtn = document.getElementById('btn');
+        elBtn.addEventListener('click', (e) => {
+            console.log('btn is clicked.');
+            let target = e.target;
+            target.setAttribute('disabled', true);
+            setTimeout(() => {
+                target.removeAttribute('disabled');
+            }, 1000);
+        }, false);
+    </script>
+    <script>
+        let a0 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        function getRandomArray(array) {
+            if (!Array.isArray(array)) return;
+
+            let length0 = array.length;
+            let a1 = Array.from(array); // 先拷贝值，做到不影响原始数组值
+            let a2 = [];
+
+            while (a1.length > 0) {
+                let boundaryArray = length0 - a1.length; 
+                let randomIndex = Math.floor(Math.random() * 10 - boundaryArray);
+                let v = a1.splice(randomIndex, 1)[0]; // 每次剔除一个，由于返回值是数组，所以取第一个值
+                a2.push(v);
+            }
+
+            return a2;
+        }
+    </script>
+
+    <script>
+        let o = { f: '', e: '', a: '', h: '', d: '' };
+
+        function getSortedKeys(obj) {
+            let a0 = Object.keys(obj);
+
+            let a1 = a0.sort((a, b) => {
+                if (a < b) return -1;
+                if (a > b) return 1;
+                return 0;
+            });
+
+            return a1;
+        }
+        /**
+        此处有个知识点，如果按照如上的这种比较方法，只能是数组里的值是字符串；
+        如果数组里的是数字，就会先转化为字符串，导致获得的值不是我们想要的；
+        因此可用 a - b 这种表达式，直接比较数字的大小
+        */ 
+    </script>
+</body>
+</html>
