@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scroll-text</title>
+    <style>
+        .container {
+            overflow: hidden;
+            position: relative;
+
+        }
+        #text {
+            position: relative;
+            animation-name: myfirst;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes myfirst {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span id="text">I am RC , I can scroll.</span>
+    </div>
+</body>
+
+</html>
